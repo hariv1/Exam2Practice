@@ -42,7 +42,7 @@ def main():
     run_test_init()
     run_test_append_string()
     run_test_double()
-#     run_test_shrink()
+    run_test_shrink()
 #     run_test_double_then_shrink()
 #     run_test_reset()
 #     run_test_steal()
@@ -265,7 +265,7 @@ class Box(object):
           :type new_volume: int
         """
         # --------------------------------------------------------------
-        # TODO: 5. Implement and test this function.
+        # DONE: 5. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -276,6 +276,29 @@ class Box(object):
         # IMPORTANT: Write a solution to this problem in pseudo-code,
         # and THEN translate the pseudo-code to a solution.
         # --------------------------------------------------------------
+
+        self.volume = new_volume
+        count = 0
+        new_string = ''
+        additional_string = ''
+
+        if len(self.contents) > self.volume:
+            for k in range(self.volume):
+                new_string = new_string + self.contents[k]
+                count = count + 1
+
+            for i in range(count, len(self.contents)):
+                additional_string = additional_string + self.contents[i]
+
+            self.contents = new_string
+
+
+        return additional_string
+
+
+
+
+
 
     def double_then_shrink(self, new_volume):
         """
