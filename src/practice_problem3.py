@@ -570,7 +570,7 @@ def practice_problem3e(sequence):
     sum = 0
 
     for k in range(0, len(sequence), 2):
-        sum =sum + sequence[k]
+        sum = sum + sequence[k]
 
     return sum
 
