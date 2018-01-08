@@ -385,9 +385,7 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
-
-        self.history_list = self.history_list + self.contents
-
+        self.history_list = self.history_list.append(self.contents)
         self.contents = self.initial_contents
         self.volume = self.initial_volume
 
@@ -466,8 +464,6 @@ class Box(object):
         # --------------------------------------------------------------
 
         return self.history_list
-
-
 
     def combined_box(self, other_box):
         """
