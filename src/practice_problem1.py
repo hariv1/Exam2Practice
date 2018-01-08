@@ -385,7 +385,8 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
-        self.history_list = self.history_list.append(self.contents)
+        self.history_list = self.history_list + [self.contents]
+
         self.contents = self.initial_contents
         self.volume = self.initial_volume
 
@@ -454,7 +455,7 @@ class Box(object):
           #   h is now ['GoodGo', 'GoodBye']
         """
         # --------------------------------------------------------------
-        # TODO: 9. Implement and test this function.
+        # DONE: 9. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
