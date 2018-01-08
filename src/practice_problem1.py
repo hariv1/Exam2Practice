@@ -46,7 +46,7 @@ def main():
     run_test_double_then_shrink()
     run_test_reset()
     run_test_steal()
-#     run_test_get_history()
+    run_test_get_history()
 #     run_test_combined_box()
 
 
@@ -111,6 +111,8 @@ class Box(object):
 
         self.initial_contents = self.contents
         self.initial_volume = self.volume
+
+        self.history_list = []
 
 
 
@@ -181,6 +183,7 @@ class Box(object):
 
         for i in range(count+1, len(additional_contents)):
             new_additional_contents = new_additional_contents + additional_contents[i]
+
 
         return new_additional_contents
 
@@ -298,6 +301,7 @@ class Box(object):
             self.contents = new_string
 
 
+
         return additional_string
 
 
@@ -382,6 +386,8 @@ class Box(object):
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
 
+        self.history_list = self.history_list + self.contents
+
         self.contents = self.initial_contents
         self.volume = self.initial_volume
 
@@ -458,6 +464,10 @@ class Box(object):
         #    DIFFICULTY:      6
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+
+        return self.history_list
+
+
 
     def combined_box(self, other_box):
         """
