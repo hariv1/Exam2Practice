@@ -156,13 +156,23 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+
+    product = 1
+
+    if circles == []:
+        return 1
+
+    for k in range(len(circles)):
+        product = product * circles[k].center.x
+
+    return product
 
 
 def run_test_practice_problem3b():
@@ -266,7 +276,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -278,6 +288,14 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+
+    last_item = sequence[-1]
+
+    for k in range(len(sequence)-1):
+        if last_item == sequence[k]:
+            return True
+
+    return False
 
 
 def run_test_practice_problem3c():
